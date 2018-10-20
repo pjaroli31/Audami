@@ -1,5 +1,7 @@
 // create a wrapper around native canvas element (with id="c")
 var canvas = new fabric.Canvas('myCanvas');
+canvas.setWidth(300);
+canvas.setHeight(300);
 
 // // create a rectangle object
 // var rect = new fabric.Rect({
@@ -21,8 +23,11 @@ var canvas = new fabric.Canvas('myCanvas');
 var objectList = {};
 var circleCount = 0;
 var rectCount = 0;
+
 function draw_shapes(name, value) {
-    
+    if (value == null) {
+        value = 10;
+    }
     if (name == 'circle') {
         var cir = new fabric.Circle({
             left: 100,
@@ -54,8 +59,8 @@ function draw_shapes(name, value) {
     }
 
 }
-function move_shapes(objectName, direction, value) {
 
+function move_shapes(objectName, direction, value) {
     if (objectName in objectList) {
         var obj = objectList[objectName];
         if (direction == 'left')
@@ -66,7 +71,6 @@ function move_shapes(objectName, direction, value) {
             obj.top = obj.top - value;
         else if (direction == 'down')
             obj.top = obj.top + value;
-        canvas.add(obj);
     }
 }
 

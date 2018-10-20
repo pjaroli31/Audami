@@ -1,4 +1,4 @@
 # VoiceDraw
 
 -------------------
-### Create a sketch with your voice.
+### MS-Paint, but with Voice.
