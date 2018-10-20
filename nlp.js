@@ -5,7 +5,7 @@ var allowed_variable_names = [
     { id: 'square', text: 'square' },
 ]
 
-function test(){
+function acceptString(test_string){
     if (window.Bravey === undefined) {
         throw "Bravey is not available";
 }
@@ -45,7 +45,7 @@ var nlp = new Bravey.Nlp.Fuzzy();
 
     // test it
    // showResults(nlp.test('draw circle please'));
-    showResults(nlp.test('Draw a 5 value circle'));
+   showResults(nlp.test(test_string));
 
 }
 }
@@ -57,6 +57,7 @@ function showResults(result) {
         //     listener(entity);
         // }
         console.log(result);
+        listener(result);
     } else {
         console.log('something failed here')
     }
