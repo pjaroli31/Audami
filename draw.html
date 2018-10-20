@@ -6,11 +6,19 @@
     <script src="fabric.js"></script>
     <link rel="stylesheet" type="text/css" href="draw.css">
 
+    <!-- Load external PaperScript and associate it with myCanvas -->
+    <script src="bravey.min.js"></script>
+    <script src='nlp.js'></script>
+    <script src="voicedetect.js"></script>
 </head>
 
-<body>
+<body onload="test()">
+    <h2>Start</h2>
+    <button type="button" onclick=startRecord()>Click Me!</button>
     <canvas id="myCanvas"></canvas>
+
     <script src='myScript.js'></script>
+
 </body>
 
 
