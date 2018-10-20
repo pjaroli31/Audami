@@ -1,5 +1,4 @@
 
-
 var allowed_shape_names = [
     { id: 'circle', text: 'circle' },
     { id: 'square', text: 'square' },
@@ -157,16 +156,16 @@ var nlp = new Bravey.Nlp.Fuzzy();
     nlp.addEntity(resize_value);
     // train with some examples
     nlp.addDocument(
-        '{move_direction} size of {move_name} by {move_value}',
+        '{resize_direction} size of {resize_name} by {resize_value}',
         'resize_shape'
     );
 
     nlp.addDocument(
-        'Change size of {move_name} to {move_value} times {move_direction}',
+        'Change size of {resize_name} to {resize_value} times {resize_direction}',
         'resize_shape'
     );
     nlp.addDocument(
-        'Make {move_name} {move_direction} by {move_value}',
+        'Make {resize_name} {resize_direction} by {resize_value}',
         'resize_shape'
     );
    
@@ -195,9 +194,9 @@ var nlp = new Bravey.Nlp.Fuzzy();
     for (let each of allowed_color_values) {
         color_value.addMatch(each.id, each.text)
     }
-    
+    nlp.addEntity(color_value);
 
-    // train with some examples
+    //train with some examples
     nlp.addDocument(
         'Fill color of {color_name} by {color_value}',
         'color_shape'
@@ -214,7 +213,7 @@ var nlp = new Bravey.Nlp.Fuzzy();
    
             
 }
-showResults(nlp.test(test_string));
+    showResults(nlp.test(test_string));
 }
 
 function showResults(result) {
