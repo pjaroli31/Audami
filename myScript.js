@@ -23,6 +23,7 @@ canvas.setHeight(300);
 var objectList = {};
 var circleCount = 0;
 var rectCount = 0;
+
 function draw_shapes(name, value) {
     if (value == null) {
         value = 10;
@@ -58,6 +59,7 @@ function draw_shapes(name, value) {
     }
 
 }
+
 function move_shapes(objectName, direction, value) {
     if (objectName in objectList) {
         var obj = objectList[objectName];
@@ -72,6 +74,9 @@ function move_shapes(objectName, direction, value) {
     }
 }
 
+function resize_shape();
+
+function change_color();
 
 // var i;
 // var sides = [];
