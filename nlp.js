@@ -5,9 +5,11 @@ var allowed_shape_names = [
     { id: 'square', text: 'square' },
 ]
 
-var allowed_move_names = [
-    { id: 'shape', text: 'shape' },
-]
+
+// var allowed_move_names = [
+    
+//     { id: 'shape', text: 'shape' },
+// ]
 var allowed_move_directions = [
     { id: 'up', text: 'up' },
     { id: 'down', text: 'down' },
@@ -15,12 +17,14 @@ var allowed_move_directions = [
     { id: 'right', text: 'right' },
 ]
 
+
+
 function acceptString(test_string){
     if (window.Bravey === undefined) {
         throw "Bravey is not available";
 }
-
-    
+//test_string='Move c1 right by 2'
+   
 var nlp = new Bravey.Nlp.Fuzzy();
         
 // adding intents one by one
@@ -49,7 +53,7 @@ var nlp = new Bravey.Nlp.Fuzzy();
     );
 
     nlp.addDocument(
-        'Create a {shape_name} with value {shape_value}',
+        'Create a {shape_name} of value {shape_value}',
         'draw_shape'
     );
 
@@ -64,38 +68,43 @@ var nlp = new Bravey.Nlp.Fuzzy();
 {
     nlp.addIntent('move_shape', [
         { entity: 'move_name', id: 'move_name' },
-        { entity: 'move_index', id: 'move_index' },
+       // { entity: 'move_index', id: 'move_index' },
         { entity: 'move_direction', id: 'move_direction' },
         { entity: 'move_value', id: 'move_value' }
     ]);
 
     let move_name = new Bravey.StringEntityRecognizer('move_name');
 
-    for (let each of allowed_move_names) {
-        move_name.addMatch(each.id, each.text)
-    }
+    // for (let each of allowed_move_names) {
+    //     move_name.addMatch(each.id, each.text)
+    // }
+    Object.keys(objectList).forEach(function(key){
+        move_name.addMatch(key,key);
+        console.log(key);
+    });
     nlp.addEntity(move_name);
 
-    let move_index = new Bravey.NumberEntityRecognizer('move_index');
-    nlp.addEntity(move_index);
+    // let move_index = new Bravey.NumberEntityRecognizer('move_index');
+    // nlp.addEntity(move_index);
 
     let move_direction = new Bravey.StringEntityRecognizer('move_direction');
 
     for (let each of allowed_move_directions) {
         move_direction.addMatch(each.id, each.text)
     }
+    
     nlp.addEntity(move_direction);
 
     let move_value = new Bravey.NumberEntityRecognizer('move_value');
     nlp.addEntity(move_value);
     // train with some examples
     nlp.addDocument(
-        'Move {move_name}{move_index}{move_direction} by {move_value}',
+        'Move {move_name}{move_direction} by {move_value}',
         'move_shape'
     );
 
     nlp.addDocument(
-        'Move {move_direction} {move_name}{move_index} by {move_value}',
+        'Shift {move_name}{move_direction}  by {move_value}',
         'move_shape'
     );
 
@@ -113,7 +122,7 @@ function showResults(result) {
         //     listener(entity);
         // }
         console.log(result);
-        //listener(result);
+        listener(result);
     } else {
         console.log('something failed here')
     }

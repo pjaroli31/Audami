@@ -15,7 +15,7 @@ function startRecord() {
       
         if (e.results[0].isFinal) {
             console.log(transcript);
-            acceptString(transcript);
+            acceptString('Move C1 right by 2');
             recognition.stop();
         }
     });
