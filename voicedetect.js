@@ -1,6 +1,7 @@
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 var stopRecog = new SpeechRecognition();
 var str;
+var finalString = '';
 
 function startRecord() {
     try {
@@ -18,6 +19,8 @@ function startRecord() {
             if (e.results[0].isFinal) {
                 console.log(transcript);
                 acceptString(transcript);
+                finalString  = finalString + transcript + '\n';
+                document.getElementById('myinput').value = finalString;
                 recognition.stop();
             }
         });

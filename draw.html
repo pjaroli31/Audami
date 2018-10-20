@@ -5,8 +5,7 @@
 <title>SpeakMeDraw</title>
 <script src="fabric.js"></script>
 <link rel = "stylesheet" href = "draw.css" type = "text/css" > 
-<link href="https://fonts.googleapis.com/css?family=Arizonia|Dawning+of+a+New+Day|Meddon|Sacramento|Stalemate" rel="stylesheet">
-<script src="bravey.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Arizonia|Dawning+of+a+New+Day|Meddon|Reem+Kufi|Sacramento|Stalemate" rel="stylesheet"><script src="bravey.min.js"></script>
 <script src='nlp.js'></script>
 <script src="voicedetect.js"></script>
 
@@ -40,8 +39,10 @@
 <div class = "sec2" >
 
 <!--<button id = "speak" name  = "speak" class = "speakbutton" > Start Listening</button> -->
-<button type="button" onclick=startRecord()>Click Me!</button>
+<button type="button" onclick=startRecord() class = "speakbutton">Click to speak</button>
+<textarea id = "myinput">
 
+</textarea>
 </div>
 
 <script src='handler.js'></script>
