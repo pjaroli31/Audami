@@ -216,6 +216,16 @@ var nlp = new Bravey.Nlp.Fuzzy();
    
             
 }
+{
+    nlp.addDocument('Clear canvas','clear_shape',{ fromFullSentence: true, expandIntent: true });
+    nlp.addDocument('Clear the screen','clear_shape',{ fromFullSentence: true, expandIntent: true });
+}
+
+{
+    nlp.addDocument('Save file','save_shape',{ fromFullSentence: true, expandIntent: true });
+    nlp.addDocument('Save the screen','save_shape',{ fromFullSentence: true, expandIntent: true });
+}
+
     showResults(nlp.test(test_string));
 }
 

@@ -18,8 +18,9 @@ function startRecord() {
 
             if (e.results[0].isFinal) {
                 console.log(transcript);
-                acceptString(transcript);
                 finalString  = finalString + transcript + '\n';
+                acceptString(transcript);
+                
                 document.getElementById('myinput').value = finalString;
                 recognition.stop();
             }

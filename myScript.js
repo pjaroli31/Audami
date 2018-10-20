@@ -40,8 +40,8 @@ function draw_shapes(name, value) {
         console.log(cir);
         canvas.add(cir);
         
-        objectList[nameObject] = cir;
-        nameObject = nextChar(nameObject);
+        objectList["circle"] = cir;
+        // nameObject = nextChar(nameObject);
 
     } else if (name == 'square') {
         var rect = new fabric.Rect({
@@ -54,8 +54,8 @@ function draw_shapes(name, value) {
         });
         canvas.add(rect);
         console.log(rect.left);
-        objectList[nameObject] = rect;
-        nameObject = nextChar(nameObject);
+        objectList["square"] = rect;
+        // nameObject = nextChar(nameObject);
     }
 
 }
@@ -64,14 +64,15 @@ function move_shapes(objectName, direction, value) {
     if (objectName in objectList) {
         var obj = objectList[objectName];
         if (direction == 'left')
-            obj.left = obj.left - value;
+            obj.set('left',obj.left - value);
         else if (direction == 'right')
-            obj.left = obj.left + value;
+        obj.set('left',obj.left + value);
         else if (direction == 'up')
-            obj.top = obj.top - value;
+        obj.set('top',obj.top - value);
         else if (direction == 'down')
-            obj.top = obj.top + value;
-        canvas.add(obj);
+        obj.set('top',obj.top + value);
+        
+        canvas.add(obj)
     }
 }
 
@@ -83,22 +84,23 @@ function resize_shape(objectName,direction,value)
         if(obj.type == "circle")
         {
             if(direction=="decrease")
-                obj.radius = obj.radius / value;
+                obj.set('radius',obj.radius / value);
             else
-            obj.radius = obj.radius * value;
+            obj.set('radius', obj.radius * value);
             
         }
         else if(obj.type == 'rectangle')
         {
             if(direction=="decrease"){
-                obj.height = obj.height / value;
-                obj.width = obj.width / value;
+                obj.set('height',obj.height / value);
+                obj.set('width',obj.width / value);
             }
             else{
-                obj.height = obj.height * value;
-                obj.width = obj.width * value;
+                obj.set('height',obj.height * value);
+                obj.set('width',obj.width * value);
             }
         }
+        
         canvas.add(obj);
     }
 }
@@ -108,8 +110,19 @@ function color_shape(objectName,colorName)
     if(objectName in objectList)
     {
         var obj = objectList[objectName];
-        obj.fill=colorName;
+        obj.set('fill',colorName);
         canvas.add(obj);
         console.log(obj);
     }
+}
+
+function clear_shape(){
+    canvas.clear();
+    finalString=''
+}
+function save_shape(){
+    var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
+
+
+    window.location.href=image;
 }

@@ -3,7 +3,9 @@ function listener(result) {
         "draw_shape": draw_shape_listener,
         "move_shape":move_shape_listener,
         "resize_shape":resize_shape_listener,
-        "color_shape":color_shape_listener
+        "color_shape":color_shape_listener,
+        "clear_shape":clear_shape_listener,
+        "save_shape":save_shape_listener
     };
 
     let intent = result.intent;
@@ -59,4 +61,12 @@ function color_shape_listener(entities){
         color_value = entities["color_value"].value
 
     color_shape(color_name,color_value)
+}
+
+function clear_shape_listener(entities){
+    clear_shape()
+}
+
+function save_shape_listener(entities){
+    save_shape()
 }
