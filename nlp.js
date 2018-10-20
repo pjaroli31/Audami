@@ -2,6 +2,7 @@
 var allowed_shape_names = [
     { id: 'circle', text: 'circle' },
     { id: 'square', text: 'square' },
+    { id: 'triangle', text: 'triangle'}
 ]
 
 
@@ -113,7 +114,7 @@ var nlp = new Bravey.Nlp.Fuzzy();
     nlp.addEntity(move_value);
     // train with some examples
     nlp.addDocument(
-        'Move {move_name} {move_direction} by {move_value}',
+        'Move {move_name} to the {move_direction} by {move_value}',
         'move_shape'
     );
 
@@ -164,10 +165,7 @@ var nlp = new Bravey.Nlp.Fuzzy();
         'Change size of {resize_name} to {resize_value} times {resize_direction}',
         'resize_shape'
     );
-    nlp.addDocument(
-        'Make {resize_name} {resize_direction} by {resize_value}',
-        'resize_shape'
-    );
+    
     nlp.addDocument(
         'Resize the {resize_name} by {resize_value} times',
         'resize_shape'
