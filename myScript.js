@@ -22,9 +22,7 @@ var objectList = {};
 var circleCount = 0;
 var rectCount = 0;
 function draw_shapes(name, value) {
-    if (value == null) {
-        value = 10;
-    }
+    
     if (name == 'circle') {
         var cir = new fabric.Circle({
             left: 100,
@@ -57,6 +55,7 @@ function draw_shapes(name, value) {
 
 }
 function move_shapes(objectName, direction, value) {
+
     if (objectName in objectList) {
         var obj = objectList[objectName];
         if (direction == 'left')
@@ -67,10 +66,38 @@ function move_shapes(objectName, direction, value) {
             obj.top = obj.top - value;
         else if (direction == 'down')
             obj.top = obj.top + value;
+        canvas.add(obj);
     }
 }
 
+function resize_shape(objectName,value)
+{
+    if(objectName in objectList)
+    {
+        var obj = objectList[objectName];
+        if(obj.type == "circle")
+        {
+            obj.radius = obj.radius * value;
+        }
+        else if(obj.type == 'rectangle')
+        {
+            obj.height = obj.height * value;
+            obj.width = obj.width * value;
+        }
+        canvas.add(obj);
+    }
+}
 
+function fill_color(objectName,colorName)
+{
+    if(objectName in objectList)
+    {
+        var obj = objectList[objectName];
+        obj.fill = colorName;
+        canvas.add(obj);
+        
+    }
+}
 // var i;
 // var sides = [];
 // function draw_polygon(name, n) {

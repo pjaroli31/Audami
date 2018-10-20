@@ -16,15 +16,21 @@ function listener(result){
 
 function draw_shape_listener(entities){
     const shape_name = entities["shape_name"].value
-    const shape_value = entities["shape_value"].value
+    var shape_value = 10;
+    if(entities["shape_value"])
+     shape_value = entities["shape_value"].value
     //console.log(shape_value);
     draw_shapes(shape_name,shape_value);
 }
 
 function move_shape_listener(entities){
     const move_name = entities["move_name"].value
-    const move_direction = entities["move_direction"].value
-    const move_value = entities["move_value"].value
+    var move_direction = "right"
+    var move_value = 10
+    if(entities["move_direction"])
+         move_direction = entities["move_direction"].value
+    if(entities["move_value"])
+    move_value = entities["move_value"].value
     //console.log(shape_value);
     move_shapes(move_name,move_direction,move_value);
 }
