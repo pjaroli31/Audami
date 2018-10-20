@@ -70,25 +70,35 @@ function move_shapes(objectName, direction, value) {
     }
 }
 
-function resize_shape(objectName,value)
+function resize_shape(objectName,direction,value)
 {
     if(objectName in objectList)
     {
         var obj = objectList[objectName];
         if(obj.type == "circle")
         {
+            if(direction=="decrease")
+                obj.radius = obj.radius / value;
+            else
             obj.radius = obj.radius * value;
+            
         }
         else if(obj.type == 'rectangle')
         {
-            obj.height = obj.height * value;
-            obj.width = obj.width * value;
+            if(direction=="decrease"){
+                obj.height = obj.height / value;
+                obj.width = obj.width / value;
+            }
+            else{
+                obj.height = obj.height * value;
+                obj.width = obj.width * value;
+            }
         }
         canvas.add(obj);
     }
 }
 
-function fill_color(objectName,colorName)
+function color_shape(objectName,colorName)
 {
     if(objectName in objectList)
     {
@@ -98,17 +108,3 @@ function fill_color(objectName,colorName)
         
     }
 }
-// var i;
-// var sides = [];
-// function draw_polygon(name, n) {
-//     for (i = 0; i < n; i++) {
-//         sides[i]=n;
-//     }
-//     left: 100,
-//     top: 100,
-//     fill: 'red',
-// }
-
-// "add" rectangle onto canvas
-// canvas.add(rect);
-// canvas.add(cir);
