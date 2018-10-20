@@ -1,3 +1,5 @@
+
+
 var allowed_variable_names = [
     { id: 'circle', text: 'circle' },
     { id: 'square', text: 'square' },
@@ -42,7 +44,7 @@ var nlp = new Bravey.Nlp.Fuzzy();
     );
 
     // test it
-    showResults(nlp.test('draw circle please'));
+   // showResults(nlp.test('draw circle please'));
     showResults(nlp.test('Draw a 5 value circle'));
 
 }
@@ -50,9 +52,11 @@ var nlp = new Bravey.Nlp.Fuzzy();
 
 function showResults(result) {
     if (result) {
-        for (let entity of result.entities) {
-            console.log(entity.id, entity.value);
-        }
+        // for (let entity of result.entities) {
+        //     console.log(entity);
+        //     listener(entity);
+        // }
+        console.log(result);
     } else {
         console.log('something failed here')
     }

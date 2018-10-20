@@ -11,7 +11,7 @@ var rect = new fabric.Rect({
 });
 
 
-function listener(name) {
+function listener(entity) {
     if (name == 'circle') {
         canvas.add(rect);
     }
