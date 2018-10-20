@@ -57,9 +57,7 @@ var nlp = new Bravey.Nlp.Fuzzy();
         'draw_shape'
     );
 
-    // test it
-   // showResults(nlp.test('draw circle please'));
-   showResults(nlp.test(test_string));
+    
 
 }
 
@@ -68,24 +66,20 @@ var nlp = new Bravey.Nlp.Fuzzy();
 {
     nlp.addIntent('move_shape', [
         { entity: 'move_name', id: 'move_name' },
-       // { entity: 'move_index', id: 'move_index' },
         { entity: 'move_direction', id: 'move_direction' },
         { entity: 'move_value', id: 'move_value' }
     ]);
 
     let move_name = new Bravey.StringEntityRecognizer('move_name');
 
-    // for (let each of allowed_move_names) {
-    //     move_name.addMatch(each.id, each.text)
-    // }
+    
     Object.keys(objectList).forEach(function(key){
         move_name.addMatch(key,key);
         console.log(key);
-    });
+   });
     nlp.addEntity(move_name);
 
-    // let move_index = new Bravey.NumberEntityRecognizer('move_index');
-    // nlp.addEntity(move_index);
+    
 
     let move_direction = new Bravey.StringEntityRecognizer('move_direction');
 
@@ -99,28 +93,26 @@ var nlp = new Bravey.Nlp.Fuzzy();
     nlp.addEntity(move_value);
     // train with some examples
     nlp.addDocument(
-        'Move {move_name}{move_direction} by {move_value}',
+        'Move {move_name} {move_direction} by {move_value}',
         'move_shape'
     );
 
     nlp.addDocument(
-        'Shift {move_name}{move_direction}  by {move_value}',
+        'Shift {move_name} {move_direction}  by {move_value}',
         'move_shape'
     );
 
     // test it
    // showResults(nlp.test('draw circle please'));
-   showResults(nlp.test(test_string));
-
+   
+            
 }
+showResults(nlp.test(test_string));
 }
 
 function showResults(result) {
     if (result) {
-        // for (let entity of result.entities) {
-        //     console.log(entity);
-        //     listener(entity);
-        // }
+        
         console.log(result);
         listener(result);
     } else {

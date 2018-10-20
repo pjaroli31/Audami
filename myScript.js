@@ -36,7 +36,7 @@ function draw_shapes(name, value) {
         console.log(cir);
         canvas.add(cir);
         circleCount = circleCount + 1;
-        var str = "c" + circleCount;
+        var str = "dog";
         objectList[str] = cir;
 
     } else if (name == 'square') {
