@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
 
-<body>
-
-    <canvas id="canvas-container">
-Your browser does not support the HTML5 canvas tag.</canvas>
-
-    <script>
-        var c = document.getElementById("canvas-container");
-        var ctx = c.getContext("2d");
-        ctx.beginPath();
-        ctx.arc(195, 150, 40, 0, 2 * Math.PI);
-        ctx.stroke();
+<head>
+    <!-- Load the Paper.js library -->
+    <script type="text/javascript" src="fabric.js"></script>
+    <!-- Load external PaperScript and associate it with myCanvas -->
+    <script type="text/paperscript" src="myScript.js" canvas="myCanvas">
     </script>
+</head>
 
+<body>
+    <canvas id="myCanvas" resize></canvas>
 </body>
 
 </html>
