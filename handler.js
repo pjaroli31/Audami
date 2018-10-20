@@ -16,5 +16,6 @@ function listener(result){
 function draw_shape_listener(entities){
     const shape_name = entities["shape_name"].value
     const shape_value = entities["shape_value"].value
+    //console.log(shape_value);
     draw_shapes(shape_name,shape_value);
 }

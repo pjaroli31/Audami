@@ -20,9 +20,9 @@ var canvas = new fabric.Canvas('myCanvas');
 
 
 function draw_shapes(name, value) {
-    if (value == NULL) {
-        value = 10;
-    }
+    // if (value == NULL) {
+    //     value = 10;
+    // }
     if (name == 'circle') {
         var cir = new fabric.Circle({
             left: 100,
