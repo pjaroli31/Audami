@@ -1,9 +1,76 @@
-#myCanvas {
-    width: 80%;
-    text-align: center;
+.body{
+
+
+    height : 100%;
+    width : 100%;
+    padding:0px;
+
+
 }
 
 
-/* canvas {
-    display: inline;
-} */
+
+.back{ 
+
+  
+
+    /* Full height */
+    background-image: url(images/background/noblur.jpg);
+    height: 46em;
+    padding :0px;
+     background-position: center; 
+    background-repeat: no-repeat;
+    
+
+}
+
+.nav{
+min-height:5%;
+width:300px;
+margin-left : 620px;
+font-size : 30px;
+margin-top:30px; 
+font-family: 'Arizonia', cursive;
+background-color: #daa7a4;
+color : white;
+position: absolute;
+text-align: center ;
+border-top-left-radius: 100px;
+border-top-right-radius: 100px;
+
+}
+
+#myCanvas{
+    
+    width : 780px;
+    height : 500px;
+    margin-left: 350px;
+    margin-top : 70px;
+    border: 20px solid #bebab1;
+    background-color: white;
+    opacity: 1;
+    box-shadow:5px 5px 5px 5px #00000085;
+    
+}
+
+.sec1{
+
+height: 46em;
+width : 250px;
+background-color :#d3d5d4;
+z-index: 2;
+position : absolute ;
+padding:0;
+margin-top : -46em;
+}
+
+.sec2{
+    height: 46em;
+    width : 250px;
+    background-color :#d3d5d4;
+    z-index: 2;
+    position : absolute ;
+    padding:0;
+    margin-top : -46em;
+    margin-left:1270px;
+}

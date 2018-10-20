@@ -1,7 +1,7 @@
 // create a wrapper around native canvas element (with id="c")
 var canvas = new fabric.Canvas('myCanvas');
-canvas.setWidth(300);
-canvas.setHeight(300);
+canvas.setWidth(780);
+canvas.setHeight(500);
 
 // // create a rectangle object
 // var rect = new fabric.Rect({

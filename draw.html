@@ -1,28 +1,54 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <script src="fabric.js"></script>
-    <link rel="stylesheet" type="text/css" href="draw.css">
+<meta charset="UTF-8">
+<title>SpeakMeDraw</title>
+<script src="fabric.js"></script>
+<link rel = "stylesheet" href = "draw.css" type = "text/css" > 
+<link href="https://fonts.googleapis.com/css?family=Arizonia|Dawning+of+a+New+Day|Meddon|Sacramento|Stalemate" rel="stylesheet">
+<script src="bravey.min.js"></script>
+<script src='nlp.js'></script>
+<script src="voicedetect.js"></script>
 
-    <script src="bravey.min.js"></script>
-    
-    
-    
 </head>
 
-<body >
-        <h2>Start</h2>
-        <button type="button" onclick=startRecord()>Click Me!</button>
-    <canvas id="myCanvas"></canvas>
+<body>
+        
+<div class = "back" >
+    <div class = "nav">
+        Speak Your Brush Out!
 
-    <script src='nlp.js'></script>
-    <script src="voicedetect.js"></script>
-    <script src='handler.js'></script>
-    <script src='myScript.js'></script>
 
+    </div>
+    <canvas id = "myCanvas"   width=780 height =500></canvas>
+
+
+
+
+
+
+    
+</div>
+
+<div class = "sec1" >
+
+
+
+</div>
+
+
+<div class = "sec2" >
+
+<!--<button id = "speak" name  = "speak" class = "speakbutton" > Start Listening</button> -->
+<button type="button" onclick=startRecord()>Click Me!</button>
+
+</div>
+
+<script src='handler.js'></script>
+<script src='myScript.js'></script>
 </body>
 
 
 
 </html>
+
