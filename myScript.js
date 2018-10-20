@@ -1,5 +1,7 @@
 // create a wrapper around native canvas element (with id="c")
 var canvas = new fabric.Canvas('myCanvas');
+canvas.setWidth(300);
+canvas.setHeight(300);
 
 // // create a rectangle object
 // var rect = new fabric.Rect({
@@ -73,13 +75,14 @@ function move_shapes(objectName, direction, value) {
 
 // var i;
 // var sides = [];
+
 // function draw_polygon(name, n) {
 //     for (i = 0; i < n; i++) {
-//         sides[i]=n;
+//         sides[i] = < side_length > ;
 //     }
 //     left: 100,
-//     top: 100,
-//     fill: 'red',
+//         top: 100,
+//         fill: 'red',
 // }
 
 // "add" rectangle onto canvas
