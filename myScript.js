@@ -47,7 +47,7 @@ function draw_shapes(name, value) {
         var rect = new fabric.Rect({
             left: 100,
             top: 100,
-            fill: 'red',
+            fill: 'green',
             width: value,
             height: value,
             shape: 'rectangle'
@@ -67,7 +67,7 @@ function draw_shapes(name, value) {
         });
         canvas.add(tri);
         console.log(tri.left);
-        objectList["square"] = tri;
+        objectList["triangle"] = tri;
         // nameObject = nextChar(nameObject);
     }
 
