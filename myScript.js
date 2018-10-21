@@ -102,7 +102,7 @@ function resize_shape(objectName,direction,value)
             obj.set('radius', obj.radius * value);
             
         }
-        else if(obj.type == 'rectangle')
+        else 
         {
             if(direction=="decrease"){
                 obj.set('height',obj.height / value);
@@ -113,17 +113,7 @@ function resize_shape(objectName,direction,value)
                 obj.set('width',obj.width * value);
             }
         }
-        else if(obj.type == 'triangle')
-        {
-            if(direction=="decrease"){
-                obj.set('height',obj.height / value);
-                obj.set('width',obj.width / value);
-            }
-            else{
-                obj.set('height',obj.height * value);
-                obj.set('width',obj.width * value);
-            }
-        }
+        
         
         canvas.add(obj);
     }
