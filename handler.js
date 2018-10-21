@@ -5,7 +5,8 @@ function listener(result) {
         "resize_shape":resize_shape_listener,
         "color_shape":color_shape_listener,
         "clear_shape":clear_shape_listener,
-        "save_shape":save_shape_listener
+        "save_shape":save_shape_listener,
+        "rotate_shape":rotate_shape_listener
     };
 
     let intent = result.intent;
@@ -61,6 +62,15 @@ function color_shape_listener(entities){
         color_value = entities["color_value"].value
 
     color_shape(color_name,color_value)
+}
+
+function rotate_shape_listener(entities) {
+    const rotate_name = entities["shape_name"].value
+    var rotate_value = 30;
+    if (entities["rotate_value"])
+        rotate_value = entities["rotate_value"].value
+        //console.log(shape_value);
+    draw_shapes(rotate_name, rotate_value);
 }
 
 function clear_shape_listener(entities){

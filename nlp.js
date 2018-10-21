@@ -174,6 +174,35 @@ var nlp = new Bravey.Nlp.Fuzzy();
 }
 
 
+// rotate
+{
+    nlp.addIntent('rotate_shape', [
+        { entity: 'rotate_name', id: 'rotate_name' },
+       { entity: 'rotate_value', id: 'rotate_value' }
+    ]);
+
+    let rotate_name = new Bravey.StringEntityRecognizer('rotate_name');
+
+    
+    Object.keys(objectList).forEach(function(key){
+        rotate_name.addMatch(key,key);
+        console.log(key);
+   });
+    nlp.addEntity(rotate_name);
+
+    
+
+    let rotate_value = new Bravey.NumberEntityRecognizer('rotate_value');
+    nlp.addEntity(rotate_value);
+    // train with some examples
+    nlp.addDocument(
+        'Rotate the {rotate_name} by {rotate_value}',
+        'rotate_shape'
+    );
+
+        
+            
+}
 // fill color
 {
     nlp.addIntent('color_shape', [
