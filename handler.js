@@ -65,7 +65,7 @@ function color_shape_listener(entities){
 }
 
 function rotate_shape_listener(entities) {
-    const rotate_name = entities["shape_name"].value
+    const rotate_name = entities["rotate_name"].value
     var rotate_value = 30;
     if (entities["rotate_value"])
         rotate_value = entities["rotate_value"].value
