@@ -5,13 +5,12 @@
 <title>SpeakMeDraw</title>
 <script src="fabric.js"></script>
 <link rel = "stylesheet" href = "draw.css" type = "text/css" > 
-<link href="https://fonts.googleapis.com/css?family=Arizonia|Dawning+of+a+New+Day|Meddon|Reem+Kufi|Sacramento|Stalemate" rel="stylesheet"><script src="bravey.min.js"></script>
-<script src='nlp.js'></script>
+<link href="https://fonts.googleapis.com/css?family=Arizonia|Bungee+Inline|Charmonman|Dawning+of+a+New+Day|Elsie:900|Fascinate|Meddon|Plaster|Reem+Kufi|Righteous|Sacramento|Sniglet:800|Stalemate" rel="stylesheet"><script src='nlp.js'></script>
 <script src="voicedetect.js"></script>
 
 </head>
 
-<body> 
+<body>
         
 <div class = "back" >
     <div class = "nav">
@@ -19,6 +18,7 @@
 
 
     </div>
+
     <canvas id = "myCanvas"   width=780 height =500></canvas>
 
 
@@ -30,12 +30,24 @@
 </div>
 
 <div class = "sec1" >
+    <div class = "name">
+        AUDAMI
+    </div>
+        <textarea id = "ins">
+    INSTRUCTIONS :
 
-
+1) Give all your commands as speech.
+2) Basic geometrical shapes are supported.
+   eg. (Draw a Circle of radius 30 )
+2) Values are taken in pixel count.
+3) Give the shape its attributes like colour, scaling , position etc by calling them by their name.
+  eg. (Colour the circle green)
+4) Clear the canvas when needed.
+5) Save your artwork in .png format.
+6) Be Creative :) 
+        </textarea>
 
 </div>
-
-
 <div class = "sec2" >
 
 <!--<button id = "speak" name  = "speak" class = "speakbutton" > Start Listening</button> -->
@@ -48,7 +60,9 @@
 <script src='handler.js'></script>
 <script src='myScript.js'></script>
 </body>
-
+<script>
+    document.getElementById("myinput").readOnly = true;
+</script>
 
 
 </html>

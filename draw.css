@@ -48,7 +48,7 @@ border: 5px solid #bebab1 ;
     width : 780px;
     height : 500px;
     margin-left: 350px;
-    margin-top : 70px;
+    margin-top : 67px;
     border: 17px solid #bebab1;
     background-color: white;
     opacity: 1;
@@ -104,6 +104,33 @@ margin-top : -46em;
     text-shadow: 1px 1px 1px #000000ab
 
 }
+.name{
+    font-family: 'Righteous', cursive;
+    font-size: 55px;
+    position: absolute;
+    margin-left: 15px;
+    color: #daa7a4;
+    margin-top: 10px;
+    padding: 5px;
+    /* background-color: white; */
+    text-shadow: 2px 2px #5b5757;
+    
+}
+#ins{
+    min-width: 200px;
+    margin-left: 13px;
+    margin-top: 100px;
+    height: 500px;
+    box-shadow: 2px 2px 15px 0px #00000091;
+    resize: none;
+    overflow-y: scroll;
+    border-radius: 5px;
+    padding: 7px;
+    overflow-x:none;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size:17px;
+    color:rgba(0, 0, 0, 0.555);
+}
 #myinput{
     min-width: 200px;
     margin-left: 13px;
@@ -116,7 +143,7 @@ margin-top : -46em;
     padding: 7px;
     overflow-x:none;
     font-family: 'Reem Kufi', sans-serif;
-    font-size:18px;
+    font-size:17px;
     color:rgba(0, 0, 0, 0.555);
 }
 
@@ -138,4 +165,8 @@ margin-top : -46em;
     
     ::-webkit-scrollbar-thumb:hover {
     background: #b38987;  
+    }
+    .buttons{
+        position :absolute;
+        z-index:3;
     }
