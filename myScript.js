@@ -68,9 +68,10 @@ function draw_shapes(name, value) {
         canvas.add(tri);
         console.log(tri.left);
         objectList["triangle"] = tri;
+        console.log(tri.angle);
         // nameObject = nextChar(nameObject);
     }
-
+    
 }
 
 function move_shapes(objectName, direction, value) {
@@ -114,7 +115,7 @@ function resize_shape(objectName,direction,value)
             }
         }
         
-        
+        rotate_shape("triangle",15);
         canvas.add(obj);
     }
 }
@@ -137,4 +138,13 @@ function clear_shape(){
 function save_shape(){
     var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
     window.location.href=image;
+}
+
+function rotate_shape(objName, angleInRad)
+{
+    var obj = objectList[objName];
+    var angle = obj.angle;
+    obj.set('angle',angle+15);
+    console.log(angle);
+    canvas.add(obj);
 }
