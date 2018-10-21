@@ -196,11 +196,14 @@ var nlp = new Bravey.Nlp.Fuzzy();
     nlp.addEntity(rotate_value);
     // train with some examples
     nlp.addDocument(
-        'Rotate the {rotate_name} by {rotate_value}',
+        'Rotate the {rotate_name} by {rotate_value} radians',
         'rotate_shape'
     );
 
-        
+    nlp.addDocument(
+        'Rotate {rotate_name} by {rotate_value} degrees',
+        'rotate_shape'
+    );  
             
 }
 // fill color

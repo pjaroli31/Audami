@@ -115,7 +115,6 @@ function resize_shape(objectName,direction,value)
             }
         }
         
-        rotate_shape("triangle",15);
         canvas.add(obj);
     }
 }
@@ -144,7 +143,7 @@ function rotate_shape(objName, angleInRad)
 {
     var obj = objectList[objName];
     var angle = obj.angle;
-    obj.set('angle',angle+15);
+    obj.set('angle',angle+angleInRad);
     console.log(angle);
     canvas.add(obj);
 }

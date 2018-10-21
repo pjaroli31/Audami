@@ -70,7 +70,7 @@ function rotate_shape_listener(entities) {
     if (entities["rotate_value"])
         rotate_value = entities["rotate_value"].value
         //console.log(shape_value);
-    draw_shapes(rotate_name, rotate_value);
+    rotate_shape(rotate_name, rotate_value);
 }
 
 function clear_shape_listener(entities){
