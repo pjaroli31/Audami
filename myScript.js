@@ -56,6 +56,19 @@ function draw_shapes(name, value) {
         console.log(rect.left);
         objectList["square"] = rect;
         // nameObject = nextChar(nameObject);
+
+    } else if (name == 'triangle') {
+        var tri = new fabric.Triangle({
+            width: 20, 
+            height: 30, 
+            fill: 'blue', 
+            left: 100, 
+            top: 100
+        });
+        canvas.add(tri);
+        console.log(tri.left);
+        objectList["square"] = tri;
+        // nameObject = nextChar(nameObject);
     }
 
 }
@@ -100,6 +113,17 @@ function resize_shape(objectName,direction,value)
                 obj.set('width',obj.width * value);
             }
         }
+        else if(obj.type == 'triangle')
+        {
+            if(direction=="decrease"){
+                obj.set('height',obj.height / value);
+                obj.set('width',obj.width / value);
+            }
+            else{
+                obj.set('height',obj.height * value);
+                obj.set('width',obj.width * value);
+            }
+        }
         
         canvas.add(obj);
     }
@@ -122,7 +146,5 @@ function clear_shape(){
 }
 function save_shape(){
     var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
-
-
     window.location.href=image;
 }
