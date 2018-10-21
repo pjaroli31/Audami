@@ -168,7 +168,10 @@ var nlp = new Bravey.Nlp.Fuzzy();
         'Make {resize_name} {resize_direction} by {resize_value}',
         'resize_shape'
     );
-   
+    nlp.addDocument(
+        'Resize the {resize_name} by {resize_value} times',
+        'resize_shape'
+    );
             
 }
 

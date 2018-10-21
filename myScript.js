@@ -19,11 +19,12 @@ canvas.setHeight(500);
 //     fill: 'red',
 //     radius: 100
 // });
+function nextChar(c) {
+    return String.fromCharCode(c.charCodeAt(0) - 1);
+}
 
 var objectList = {};
-var circleCount = 0;
-var rectCount = 0;
-
+var nameObject = 'Z';
 function draw_shapes(name, value) {
     if (value == null) {
         value = 10;
@@ -38,9 +39,9 @@ function draw_shapes(name, value) {
         });
         console.log(cir);
         canvas.add(cir);
-        circleCount = circleCount + 1;
-        var str = "dog";
-        objectList[str] = cir;
+        
+        objectList[nameObject] = cir;
+        nameObject = nextChar(nameObject);
 
     } else if (name == 'square') {
         var rect = new fabric.Rect({
@@ -53,9 +54,8 @@ function draw_shapes(name, value) {
         });
         canvas.add(rect);
         console.log(rect.left);
-        rectCount = rectCount + 1;
-        var str = "r" + rectCount;
-        objectList[str] = rect;
+        objectList[nameObject] = rect;
+        nameObject = nextChar(nameObject);
     }
 
 }
@@ -71,6 +71,7 @@ function move_shapes(objectName, direction, value) {
             obj.top = obj.top - value;
         else if (direction == 'down')
             obj.top = obj.top + value;
+        canvas.add(obj);
     }
 }
 
@@ -107,8 +108,8 @@ function color_shape(objectName,colorName)
     if(objectName in objectList)
     {
         var obj = objectList[objectName];
-        obj.fill = colorName;
+        obj.fill=colorName;
         canvas.add(obj);
-        
+        console.log(obj);
     }
 }
